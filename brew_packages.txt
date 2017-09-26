@@ -1,0 +1,7 @@
+node
+npm
+git
+rsync
+bash-git-prompt
+zsh 
+zsh-completions
