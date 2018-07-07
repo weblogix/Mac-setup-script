@@ -133,8 +133,8 @@ brew install $(cat brew_packages.txt)
 
 # Scripts
 
-sh scripts/zsh.sh
-sh scripts/composer.sh
-sh scripts/dev_dns.sh
-sh scripts/git.sh
+scripts/zsh.sh
+scripts/composer.sh
+#scripts/dev_dns.sh
+scripts/git.sh
 
