@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # Composer (Global)
 
 echo "${COLOR_RED} Installling Composer"

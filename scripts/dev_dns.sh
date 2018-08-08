@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # DNSmasq for local dev (https://weblogix.ca/local-development/use-any-domains-for-local-development-with-dnsmasq-on-osx-10-1110-12/)
 brew install dnsmasq
 DNSMAS_CONF="/usr/local/etc/dnsmasq.conf"
