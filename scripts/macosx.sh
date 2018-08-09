@@ -84,6 +84,8 @@ defaults write com.apple.TextEdit RichText -int 0
 # Stop Photos from opening automatically
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+# Allow Apps downloaded from Anywhere
+sudo spctl --master-disable
 
 # Restart Finder
 killall Finder
