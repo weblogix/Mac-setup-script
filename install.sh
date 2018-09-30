@@ -8,6 +8,9 @@
 # Apps + Packages (Also installs Xcode Command Line Tools)
 scripts/homebrew.sh
 
+# Mac OS SSH Keychain fix
+# https://github.com/jirsbek/SSH-keys-in-macOS-Sierra-keychain
+sudo cp ./scripts/ssh.add.a.plist /Library/LaunchAgents/
 
 # Local Environment
 #scripts/xcode.sh
