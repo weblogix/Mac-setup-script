@@ -4,7 +4,7 @@
 echo "Installling Mac OS Tweaks"
 
 # Show hidden files
-defaults write com.apple.Finder AppleShowAllFiles true
+defaults write com.apple.finder AppleShowAllFiles TRUE
 
 # Enable Text Selection in Quick Look Windows
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
