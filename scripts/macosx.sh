@@ -3,8 +3,28 @@
 # System tweaks
 echo "Installling Mac OS Tweaks"
 
+# Finder
+
+# Set `${HOME}` as the default location for new Finder windows
+defaults write com.apple.finder NewWindowTarget -string "PfDe"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/"
+
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles TRUE
+
+# Show Status bar in Finder （ステータスバーを表示）
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show Path bar in Finder （パスバーを表示）
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Show the ~/Library directory （ライブラリディレクトリを表示、デフォルトは非表示）
+chflags nohidden ~/Library
+
+
+# Avoid creating `.DS_Store` files on network volumes （ネットワークディスクで、`.DS_Store` ファイルを作らない）
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
 
 # Enable Text Selection in Quick Look Windows
 defaults write com.apple.finder QLEnableTextSelection -bool TRUE;killall Finder
@@ -54,8 +74,9 @@ defaults write com.apple.dock launchanim -bool false
 # Make all animations faster that are used by Mission Control.
 defaults write com.apple.dock expose-animation-duration -float 0.1
 
-# Disable the delay when you hide the Dock
-defaults write com.apple.Dock autohide-delay -float 0
+# To make the dock hide and show instantly (if set to auto-hide)
+# https://howchoo.com/g/mmuwzwnmmzn/make-the-dock-autohide-and-show-instantly-in-os-x
+defaults write com.apple.Dock autohide-delay -float 0.0001; killall Dock
 
 # Disable the animation when you sending and replying an e-mail
 defaults write com.apple.mail DisableReplyAnimations -bool true
@@ -68,6 +89,29 @@ defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.25
 
 # Prevent Safari from Opening Safe Files Automatically
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+
+# Enable the `Develop` menu and the `Web Inspector` （開発メニューを表示）
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+
+# Enable `Debug` menu （メニュー → デバッグを表示）
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# Show the full URL in the address bar (note: this will still hide the scheme)
+# アドレスバーに完全なURLを表示
+defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
+
+# Add a context menu item for showing the `Web Inspector` in web views
+# コンテキストメニューにWebインスペクタを追加
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+# Show Safari's Status Bar （ステータスバーを表示）
+defaults write com.apple.Safari ShowStatusBar -bool true
+
+# Don't remember passwords （パスワードを自動入力・記録しない）
+defaults write com.apple.Safari AutoFillPasswords -bool false
+
 
 # Email
 
@@ -86,6 +130,13 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 # Allow Apps downloaded from Anywhere
 sudo spctl --master-disable
+
+
+# Automatically quit the printer app once the print jobs are completed
+# 印刷が終了したら、自動的にプリンターアプリを終了する
+defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+
+
 
 # Restart Finder
 killall Finder
