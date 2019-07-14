@@ -20,10 +20,5 @@ sudo cp ./ssh.add.a.plist /Library/LaunchAgents/
 ./zsh.sh
 ./git.sh
 
-# Web Dev
-
-#scripts/composer.sh
-#scripts/dev_dns.sh
-
 cd ..
 source ~/.zshrc
