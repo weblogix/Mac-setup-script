@@ -7,6 +7,7 @@
 cd scripts
 # Mac OS tweaks
 ./macosx.sh
+./bluetooth.sh
 
 # Apps + Packages (Also installs Xcode Command Line Tools)
 ./homebrew.sh
