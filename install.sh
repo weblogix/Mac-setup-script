@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Xcode stuff
+xcode-select --install
+sudo xcodebuild -license accept
+
 # if [ "$EUID" -ne 0 ]
 #   then echo "Please run as root.  Some commands require root priviledges."
 #   exit
